@@ -5,7 +5,9 @@
  
     <classes>
       <class name="com.autoationscript.VerifyLehandSideScript">
-      
+      <methods>
+      <include name="clicknLethandSide_Arrow"></include>
+      </methods>
       </class>
     </classes>
   </test> <!-- Test -->

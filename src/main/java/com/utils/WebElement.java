@@ -1,9 +1,14 @@
 package com.utils;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -25,6 +30,7 @@ public class WebElement implements ConstantValue{
 		}
 	}
 
+	
 	public boolean clickToElement(String xpath) {
 		try {
 			driver.get().findElement(By.xpath(xpath)).click();

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class loginScript  extends BaseClass{
 
-	@Test
+	@Test 
 	public void loginTest() {
 		userableToLogin();
 		

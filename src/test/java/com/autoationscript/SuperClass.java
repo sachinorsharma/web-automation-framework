@@ -12,29 +12,28 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
 import com.beust.jcommander.Parameter;
 import com.pom.HeaderPom;
 import com.pom.LoginPOM;
+import com.utils.ExtendsReportsUtils;
 
 public class SuperClass {
 	public  ThreadLocal<WebDriver> driver=new ThreadLocal<WebDriver>();
 	
 	
 	public static WebDriver drive=null;
-	
+	//ExtentReports extent=new ExtentReports();
+	ExtendsReportsUtils extent=new ExtendsReportsUtils();
 	
 	@BeforeMethod
-	@Parameters("browser")
-	public void openbrowser(String browser)
+	//@Parameters("browser")
+	public void openbrowser()
 	{
 		try {
-		if(browser.equals("chrome")) {
-		drive=new ChromeDriver();
-		}
-		else
-		{
-			drive=new FirefoxDriver();
-		}
+			drive=new ChromeDriver();
+	
+		
 		driver.set(drive);
 		driver.get().manage().window().maximize();}
 		catch (Exception e) {
@@ -49,6 +48,7 @@ public class SuperClass {
 	public void quiteBrowser()
 	{
 		driver.get().quit();
+		
 	}
 	
 //	WebDriver d=
